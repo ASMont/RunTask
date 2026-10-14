@@ -1,0 +1,112 @@
+{
+  "name": "runtask",
+  "displayName": "Запуск задач",
+  "description": "Панель Запуск задач читает список открытого проекта из RunTask/task-menu.json.",
+  "version": "0.2.1",
+  "publisher": "ASMont",
+  "author": "ASMont",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "views": {
+      "explorer": [
+        {
+          "id": "projectTaskMenu",
+          "name": "Запуск задач",
+          "when": "projectTaskMenu.hasConfig",
+          "visibility": "visible"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "projectTaskMenu.run",
+        "title": "Запустить задачу из списка"
+      },
+      {
+        "command": "projectTaskMenu.refresh",
+        "title": "Перезапустить расширение",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "projectTaskMenu.addButton",
+        "title": "Добавить кнопку задачи",
+        "icon": "$(add)"
+      },
+      {
+        "command": "projectTaskMenu.addSubmenu",
+        "title": "Добавить подменю задач",
+        "icon": "$(list-tree)"
+      },
+      {
+        "command": "projectTaskMenu.editEntry",
+        "title": "Изменить кнопку или подменю",
+        "icon": "$(edit)"
+      },
+      {
+        "command": "projectTaskMenu.deleteEntry",
+        "title": "Удалить кнопку или подменю",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "projectTaskMenu.cycleTheme",
+        "title": "Следующая цветовая тема",
+        "icon": "$(color-mode)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "projectTaskMenu.addButton",
+          "when": "view == projectTaskMenu",
+          "group": "navigation@1"
+        },
+        {
+          "command": "projectTaskMenu.addSubmenu",
+          "when": "view == projectTaskMenu",
+          "group": "navigation@2"
+        },
+        {
+          "command": "projectTaskMenu.refresh",
+          "when": "view == projectTaskMenu",
+          "group": "navigation@3"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "projectTaskMenu.addButton",
+          "when": "view == projectTaskMenu && viewItem == taskSubmenu",
+          "group": "1_edit@1"
+        },
+        {
+          "command": "projectTaskMenu.addSubmenu",
+          "when": "view == projectTaskMenu && viewItem == taskSubmenu",
+          "group": "1_edit@2"
+        },
+        {
+          "command": "projectTaskMenu.editEntry",
+          "when": "view == projectTaskMenu && (viewItem == taskButton || viewItem == taskSubmenu)",
+          "group": "inline"
+        },
+        {
+          "command": "projectTaskMenu.editEntry",
+          "when": "view == projectTaskMenu && (viewItem == taskButton || viewItem == taskSubmenu)",
+          "group": "1_edit@3"
+        },
+        {
+          "command": "projectTaskMenu.deleteEntry",
+          "when": "view == projectTaskMenu && (viewItem == taskButton || viewItem == taskSubmenu)",
+          "group": "1_edit@4"
+        }
+      ]
+    }
+  }
+}

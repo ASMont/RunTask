@@ -1,0 +1,283 @@
+{
+  "title": "Запуск задач",
+  "files": [
+    {
+      "path": "package.json",
+      "tooltip": "Описание расширения Запуск задач"
+    },
+    {
+      "path": "extension.js",
+      "tooltip": "Код панели Запуск задач"
+    },
+    {
+      "path": "onec-keys.js",
+      "tooltip": "Ключи запуска 1С"
+    },
+    {
+      "path": "task-menu.json",
+      "tooltip": "Список задач и настройки этой панели"
+    },
+    {
+      "path": "Описание.md",
+      "tooltip": "Описание проекта Запуск задач"
+    },
+    {
+      "path": "Инструкция.md",
+      "tooltip": "Установка панели и работа с кнопками"
+    },
+    {
+      "path": "README.md",
+      "tooltip": "Текст страницы расширения в Cursor"
+    },
+    {
+      "path": "История.md",
+      "tooltip": "Журнал версий расширения Запуск задач"
+    },
+    {
+      "path": "icons/play.svg",
+      "tooltip": "Цветной значок запуска"
+    },
+    {
+      "path": "icons/tools.svg",
+      "tooltip": "Цветной значок конфигуратора"
+    }
+  ],
+  "entries": [
+    {
+      "label": "Запуск 1с",
+      "icon": "list-tree",
+      "tooltip": "Тонкий клиент ЗУП Корп ТР",
+      "expanded": true,
+      "items": [
+        {
+          "label": "Финансист",
+          "tooltip": "Тонкий клиент ЗУП Корп ТР, пользователь Финансист",
+          "icon": "play",
+          "hint": "ENTERPRISE /S 1c-1c-dev/ZP_Corporation_TEST_TR /N Финансист /P",
+          "run": {
+            "kind": "1c",
+            "client": "thin",
+            "command": "C:\\Program Files\\1cv8\\8.3.27.2342\\bin\\1cv8c.exe",
+            "args": [
+              "ENTERPRISE",
+              "/S",
+              "1c-1c-dev/ZP_Corporation_TEST_TR",
+              "/N",
+              "Финансист",
+              "/P"
+            ],
+            "cwd": "${workspaceFolder}",
+            "keys": [
+              {
+                "key": "ENTERPRISE"
+              },
+              {
+                "key": "/S",
+                "value": "1c-1c-dev/ZP_Corporation_TEST_TR"
+              },
+              {
+                "key": "/N",
+                "value": "Финансист"
+              },
+              {
+                "key": "/P",
+                "secretId": "eaf72171-a869-45b7-a104-48519ea28134"
+              }
+            ],
+            "baseName": "Зарплата ТЕСТ \"Корпоративная\" (ТР)"
+          }
+        },
+        {
+          "label": "Соколов",
+          "tooltip": "Тонкий клиент ЗУП Корп ТР, пользователь Соколов Александр",
+          "icon": "play",
+          "hint": "ENTERPRISE /S 1c-1c-dev/ZP_Corporation_TEST_TR /N Соколов Александр /P",
+          "run": {
+            "kind": "1c",
+            "client": "thin",
+            "command": "C:\\Program Files\\1cv8\\8.3.27.2342\\bin\\1cv8c.exe",
+            "args": [
+              "ENTERPRISE",
+              "/S",
+              "1c-1c-dev/ZP_Corporation_TEST_TR",
+              "/N",
+              "Соколов Александр",
+              "/P"
+            ],
+            "cwd": "${workspaceFolder}",
+            "keys": [
+              {
+                "key": "ENTERPRISE"
+              },
+              {
+                "key": "/S",
+                "value": "1c-1c-dev/ZP_Corporation_TEST_TR"
+              },
+              {
+                "key": "/N",
+                "value": "Соколов Александр"
+              },
+              {
+                "key": "/P",
+                "secretId": "bad5d489-5c75-476e-9173-873da088ed11"
+              }
+            ],
+            "baseName": "Зарплата ТЕСТ \"Корпоративная\" (ТР)"
+          }
+        },
+        {
+          "label": "ЗУП ТР  (Выгрузка в CF)",
+          "tooltip": "DESIGNER /S 1c-1c-dev/ZP_Corporation_TEST_TR /DumpDBCfg C:\\ЗУП Корп XML\\.temp\\db-conf.cf /N Admin /P /DisableStartupDialogs /Out ${workspaceFolder}\\1c-designer.log",
+          "icon": "tools",
+          "hint": "DESIGNER /S 1c-1c-dev/ZP_Corporation_TEST_TR /DumpDBCfg C:\\ЗУП Корп XML\\.temp\\db-conf.cf /N Admin /P /DisableStartupDialogs /Out ${workspaceFolder}\\1c-designer.log",
+          "run": {
+            "kind": "1c",
+            "client": "thick",
+            "command": "C:\\Program Files\\1cv8\\8.3.27.2342\\bin\\1cv8.exe",
+            "args": [
+              "DESIGNER",
+              "/S",
+              "1c-1c-dev/ZP_Corporation_TEST_TR",
+              "/DumpDBCfg",
+              "C:\\ЗУП Корп XML\\.temp\\db-conf.cf",
+              "/N",
+              "Admin",
+              "/P",
+              "/DisableStartupDialogs",
+              "/Out",
+              "${workspaceFolder}\\1c-designer.log"
+            ],
+            "cwd": "${workspaceFolder}",
+            "keys": [
+              {
+                "key": "DESIGNER"
+              },
+              {
+                "key": "/S",
+                "value": "1c-1c-dev/ZP_Corporation_TEST_TR"
+              },
+              {
+                "key": "/DumpDBCfg",
+                "value": "C:\\ЗУП Корп XML\\.temp\\db-conf.cf"
+              },
+              {
+                "key": "/N",
+                "value": "Admin"
+              },
+              {
+                "key": "/P",
+                "secretId": "aa8a7682-e450-4e27-8584-c853a9c03926"
+              },
+              {
+                "key": "/DisableStartupDialogs"
+              },
+              {
+                "key": "/Out",
+                "value": "${workspaceFolder}\\1c-designer.log"
+              }
+            ],
+            "baseName": "Зарплата ТЕСТ \"Корпоративная\" (ТР)"
+          }
+        },
+        {
+          "label": "ЗУП ТР Админ Предприятие",
+          "tooltip": "ENTERPRISE /S 1c-1c-dev/ZP_Corporation_TEST_TR /N Admin /P ЗУП ТР Admin Предприятие",
+          "icon": "play",
+          "hint": "ENTERPRISE /S 1c-1c-dev/ZP_Corporation_TEST_TR /N Admin /P ЗУП ТР Admin Предприятие",
+          "run": {
+            "kind": "1c",
+            "client": "thin",
+            "command": "C:\\Program Files\\1cv8\\8.3.27.2342\\bin\\1cv8c.exe",
+            "args": [
+              "ENTERPRISE",
+              "/S",
+              "1c-1c-dev/ZP_Corporation_TEST_TR",
+              "/N",
+              "Admin",
+              "/P",
+              "ЗУП",
+              "ТР",
+              "Admin",
+              "Предприятие"
+            ],
+            "cwd": "${workspaceFolder}",
+            "keys": [
+              {
+                "key": "ENTERPRISE"
+              },
+              {
+                "key": "/S",
+                "value": "1c-1c-dev/ZP_Corporation_TEST_TR"
+              },
+              {
+                "key": "/N",
+                "value": "Admin"
+              },
+              {
+                "key": "/P",
+                "secretId": "55bb9b81-2a4b-42c7-8450-afe95e98059c"
+              },
+              {
+                "key": "ЗУП"
+              },
+              {
+                "key": "ТР"
+              },
+              {
+                "key": "Admin"
+              },
+              {
+                "key": "Предприятие"
+              }
+            ],
+            "baseName": "Зарплата ТЕСТ \"Корпоративная\" (ТР)"
+          }
+        },
+        {
+          "label": "ЗУП ТР Админ Конфигуратор",
+          "tooltip": "DESIGNER /S 1c-1c-dev/ZP_Corporation_TEST_TR /N Admin /P",
+          "icon": "tools",
+          "hint": "DESIGNER /S 1c-1c-dev/ZP_Corporation_TEST_TR /N Admin /P",
+          "run": {
+            "kind": "1c",
+            "client": "thick",
+            "command": "C:\\Program Files\\1cv8\\8.3.27.2342\\bin\\1cv8.exe",
+            "args": [
+              "DESIGNER",
+              "/S",
+              "1c-1c-dev/ZP_Corporation_TEST_TR",
+              "/N",
+              "Admin",
+              "/P"
+            ],
+            "cwd": "${workspaceFolder}",
+            "keys": [
+              {
+                "key": "DESIGNER"
+              },
+              {
+                "key": "/S",
+                "value": "1c-1c-dev/ZP_Corporation_TEST_TR"
+              },
+              {
+                "key": "/N",
+                "value": "Admin"
+              },
+              {
+                "key": "/P",
+                "secretId": "5b69d66a-f37d-4141-aabe-45d343d18ffb"
+              }
+            ],
+            "baseName": "Зарплата ТЕСТ \"Корпоративная\" (ТР)"
+          }
+        }
+      ]
+    },
+    {
+      "label": "Тема",
+      "icon": "color-mode",
+      "tooltip": "Следующая цветовая тема по кругу",
+      "command": "projectTaskMenu.cycleTheme"
+    }
+  ]
+}
